@@ -1,0 +1,52 @@
+{% extends 'client/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+{% if messages %}
+    <ul class="messages" style="height: 80px; background-color: lightgrey;">
+        {% for message in messages %}
+
+        <li style="font-size: 25px; list-style: none; line-height: 80px; font-weight: bolder; color: red;" class="text-center" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+<div class="content">
+        <div class="container">
+            <div class="row" style="margin-left: 280px;">
+
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h1 class="text-center">Welcome back,</h1>
+                        <h3 class="text-center"> Please login to your account to continue.</h3><br>
+                        <form method="post" action="/client/login_check">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="control-label" for="case" style="font-size: 15px;">Username : </label>
+                                    <input type="text" pattern="[A-Za-z0-9\s]{1,20}" title="password must be less than 20 characters" name="username" id="username" placeholder="Enter Username" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="control-label" for="phone" style="font-size: 15px;">Password : </label>
+                                    <input type="password" class="form-control" pattern="[A-Za-z0-9\s]{8,20}" title="password must be between 8 to 20 characters" name="password" id="password" placeholder="Enter Password">
+                                </div>
+                                
+                                    <div class="col-md-12">
+                                        <div class="form-group" align="center">
+                                            <button id="singlebutton" name="singlebutton" class="btn btn-default">Log-In</button>
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+</div>
+                    </div>
+                </div>
+
+{% endblock %}

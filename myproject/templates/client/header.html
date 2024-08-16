@@ -1,0 +1,64 @@
+{% load static %}
+
+<div class="header-top">
+        <!-- header-top-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <span class="text-block time-block">  
+                                <span class="time-text">Mon to Sat: <strong>10am - 9pm</strong> - Sunday: <strong>Closed</strong></span>
+                    </span>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8  col-xs-12">
+                    <div class="top-text">
+                        <span class="text-block call-block"> 
+                               <span class="call-no">+00 8160189969</span>
+                        </span>
+                        <span class="text-block mail-block hidden-xs hidden-sm">  
+                                <span class="mail-text">onlinelawyeroffice@gmail.com</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <a href="/client/home"><img src="{% static 'client/images/logo.png' %}" alt=""></a>
+                </div>
+                <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
+                     <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                <li class="active"><a href="/client/home" title="Home">Home</a></li>
+                                <li><a href="/client/about" title="About Us">About</a></li>
+                                <!-- <li class="has-sub"><a href="service-list.html" title="Service List">Service List</a>
+                                    <ul>
+                                        <li><a href="service-list.html" title="Service List">Service List</a></li>
+                                        <li><a href="service-detail.html" title="Service Detail">Service Detail</a></li>
+                                    </ul>
+                                </li> -->
+                                <!-- <li class="has-sub"><a href="blog-default.html" title="Blog">News</a>
+                                    <ul>
+                                        <li><a href="blog-default.html" title="Blog" >Blog Default</a></li>
+                                        <li><a href="blog-single.html" title="Blog Single" >Blog Single</a></li>
+                                    </ul>
+                                </li> -->
+                                {% if request.user.is_authenticated %}
+                                <li><a href="/client/cases" title="Cases">Cases</a></li>
+                                <li><a href="/client/appointment" title="Make Appointment">Appointment</a> </li>
+                                <li><a href="/client/feedback" title="Give Feedback">Feedback</a> </li>
+                                <li><a href="/client/logout" title="Logout">Logout</a> </li>
+                                {% else %}
+                                <li><a href="/client/login" title="Login">Login</a> </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
